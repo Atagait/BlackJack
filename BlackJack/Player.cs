@@ -1,7 +1,7 @@
 using System;
 namespace BlackJack {
     class Player {
-        private Hand hand;
+        protected Hand hand;
 
         public Player() {
             hand = new Hand();
@@ -18,7 +18,7 @@ namespace BlackJack {
                 switch(response.ToUpper()){
                     case "H":
                         DealCards(1, deck);
-                        playing = !hand.IsBusted();
+                        playing = !hand.IsBusted;
                         break;
                     case "S":
                         playing = false;
@@ -41,9 +41,8 @@ namespace BlackJack {
             Console.WriteLine(this.ToString());
         }
 
-        public override string ToString(){
-            return hand.ToString();
-        }
+        public override string ToString() =>
+            hand.ToString();
 
     }
 
